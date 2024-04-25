@@ -1,0 +1,7 @@
+  git config --global user.email "victor.munozm1@gmail.com"
+  git config --global user.name "vcccb"
+
+
+git config --global http.sslCAgithub /home/javl/git-certs/github.der
+
+

@@ -1,0 +1,122 @@
+openapi: 3.0.3
+info:
+  title: Test BCI
+  description: |-
+    Api definicion de clases y servicios.
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: victor.munozm1@gmail.com
+  version: 1.0.0
+servers:
+  - url: http://localhost:8082/testBCI/
+paths:
+  /testBCI/ingresoUsuario:
+    post:
+      tags:
+        - usuario
+      summary: agregar usuario
+      description: Servicio para agregar un nuevo usuario
+      operationId: addUser
+      requestBody:
+        description: crea un nuevo usuario
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponses'          
+        '400':
+          description: Invalid input
+        '422':
+          description: Validation exception
+  /testBCI/consultaUsuario:
+    post:
+      tags:
+        - usuario
+      summary: buscar usuario
+      description: Servicio para buscar usuario por correo electronico
+      operationId: findUser
+      requestBody:
+        description: crea un nuevo usuario
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FindUserRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponses'          
+        '400':
+          description: Invalid input
+        '422':
+          description: Validation exception
+components:
+  schemas:
+    Phones:
+      type: object
+      properties:
+        number:
+          type: string
+          example: 1234567
+        citycode:
+          type: string
+          example: 1
+        contrycode:
+          type: string
+          example: 57
+    UserRequest:
+      properties:
+        name:
+          type: string
+          example: Juan Rodriguez
+        email:
+          type: string
+          example: juan@rodriguez.org
+        password:
+          type: string
+          example: hunter2
+        phones:
+          $ref: '#/components/schemas/Phones'
+    FindUserRequest:
+      properties:
+        email:
+          type: string
+          example: juan@rodriguez.org
+    UserResponses:
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: 9151f21f-43ae-43b4-92f3-f4af67cdf544
+        created:
+          type: string
+          example: 25-04-2024 15:03 PM
+        modified:
+          type: string
+          example: 25-04-2024 15:03 PM
+        last_login:
+          type: string
+          example: 25-04-2024 15:03 PM
+        token:
+          type: string
+          example: JWT token
+        isactive:
+          type: boolean
+          example: true
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT 
+security:
+  - bearerAuth: [] 

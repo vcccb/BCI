@@ -31,10 +31,10 @@ public class DemoService {
     }
 
     public List<UserRequestDTO> getAllUser(){
-        Iterable<UserRequest> userRequest = demoRepository.findAll();
+        Iterable<UserRequest> userRequests = demoRepository.findAll();
         List<UserRequestDTO> userRequestDTO = new ArrayList<>();
 
-        userRequest.forEach( userRequest -> {
+        userRequests.forEach( userRequest -> {
             userRequestDTO.add(UserRequestDTO
                     .builder()
                     .NAME(userRequest.getNAME())
@@ -47,7 +47,7 @@ public class DemoService {
                     .LASTLOGIN(userRequest.getLASTLOGIN())
                     .build());
         });
-        return commentsDTO;
+        return userRequestDTO;
     }
 
 }

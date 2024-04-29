@@ -18,7 +18,7 @@ public class UserPhones {
 
     @Id
     @GeneratedValue()
-    private int ID;
+    private UUID ID;
     private UUID IDUSER;
     @Column(nullable = false)
     private String NUMBER;

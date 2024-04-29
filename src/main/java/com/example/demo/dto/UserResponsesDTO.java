@@ -5,16 +5,20 @@ import lombok.Data;
 
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Data
 @Builder
-public class UserPhonesDTO {
-    private UUID ID;
+public class UserResponsesDTO {
+
     private UUID UUIDUSER;
-    private String NUMBER;
+    private String NAME;
     @NotNull(message = "comment cannot be empty")
-    private String CITYCODE;
-    private String COUNTRYCODE;
+    private String EMAIL;
+    private Date CREATED;
+    private Date LASTMODIFIED;
+    private Date LASTLOGIN;
+    private List<UserPhonesResponsesDTO> PHONES;
 
 }

@@ -10,13 +10,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class DemoService {
 
     @Autowired
     DemoRepository demoRepository;
-    public void saveUser(UserRequestDTO userRequestDTO) {
+    public UUID saveUser(UserRequestDTO userRequestDTO) {
         UserRequest userRequest = UserRequest
                 .builder()
                 .NAME(userRequestDTO.getNAME())
@@ -27,7 +28,12 @@ public class DemoService {
                 .LASTMODIFIED(new Date())
                 .PASSWORD(userRequestDTO.getPASSWORD())
                 .build();
+
+
+
         demoRepository.save(userRequest);
+        System.out.println("UUID :: " + userRequest.getUUIDUSER());
+        return userRequest.getUUIDUSER();
     }
 
     public List<UserRequestDTO> getAllUser(){

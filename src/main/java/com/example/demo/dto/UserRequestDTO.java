@@ -6,6 +6,7 @@ import lombok.Data;
 
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -21,5 +22,6 @@ public class UserRequestDTO {
     private Date CREATED;
     private Date LASTMODIFIED;
     private Date LASTLOGIN;
+    private List<UserPhonesDTO> PHONES;
 
 }

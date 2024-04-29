@@ -1,0 +1,19 @@
+Test para BCI
+
+Proyecto se creó con el IDE intelliJ
+
+--  Cargar proyecto sobre el puerto 8080,
+    la url del servicio para insertar un
+    registro es el siguiente :
+
+Servicio : Post
+http://localhost:8080/testBCI
+
+Request de ejemplo :
+
+
+
+
+-- Expresion regular para validar correo
+   electronico es parametrizable desde el
+   archivo "constants/Constants.java"

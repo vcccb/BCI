@@ -1,16 +1,16 @@
-Test para BCI
-
-Proyecto se creó con el IDE intelliJ
-
+-------------------------------------------------
+Test para BCI(Proyecto se creó con el IDE intelliJ)
+-------------------------------------------------
 --  Cargar proyecto sobre el puerto 8080,
     la url del servicio para insertar un
     registro es el siguiente :
-
+------------------------------------------------
 Servicio : Post
+------------------------------------------------
 http://localhost:8080/testBCI
-
+-------------------------------------------------
 Request de ejemplo :
-
+-------------------------------------------------
 {
     "NAME": "Juan Rodriguez",
     "EMAIL": "juan@rodriguez22.org",

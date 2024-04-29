@@ -1,9 +1,7 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.dto.CommentDTO;
 import com.example.demo.dto.UserRequestDTO;
-import com.example.demo.dto.UserResponsesDTO;
 import com.example.demo.exception.CustomErrorException;
 import com.example.demo.services.DemoPhonesService;
 import com.example.demo.services.DemoService;
@@ -14,18 +12,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Date;
 import java.util.List;
-import java.util.Properties;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.example.demo.constant.Constants.*;
-import static java.util.Calendar.DATE;
 
 @RestController
 @RequestMapping("/testBCI")

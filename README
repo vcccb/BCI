@@ -11,9 +11,29 @@ http://localhost:8080/testBCI
 
 Request de ejemplo :
 
-
+{
+    "NAME": "Juan Rodriguez",
+    "EMAIL": "juan@rodriguez22.org",
+    "PASSWORD": "hunter2",
+    "PHONES": [
+        {
+            "NUMBER": "1234567",
+            "CITYCODE": "1",
+            "COUNTRYCODE": "57"
+        },
+        {
+            "NUMBER": "12345678",
+            "CITYCODE": "1",
+            "COUNTRYCODE": "57"
+        }
+    ]
+}
 
 
 -- Expresion regular para validar correo
    electronico es parametrizable desde el
    archivo "constants/Constants.java"
+
+
+-- Se agrega script para base de datos h2 script.sql
+
